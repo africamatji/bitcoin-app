@@ -6,8 +6,8 @@ import {BitcoinExchange} from "./BitcoinExchange";
 @Injectable()
 export class BitCoinExchangeService {
   constructor(private readonly http: HttpClient) {}
-  getPriceUSD (): Observable<BitcoinExchange> {
-    const url = 'http://localhost:3000/bitcoin/exchange'
+  getExchangeRateInCurrency (): Observable<BitcoinExchange> {
+    const url = 'http://localhost:3000/bitcoin/exchange/zar'
     return this.http.get<BitcoinExchange>(url).pipe(
       map((response: BitcoinExchange) => response),
       catchError((error: HttpErrorResponse) => {

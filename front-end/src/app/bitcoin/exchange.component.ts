@@ -10,9 +10,23 @@ import {Observable} from "rxjs";
 })
 
 export class BitCoinExchangeComponent {
-  bitcoinExchange: Observable<BitcoinExchange>
+  currencyAmount = 1;
+  bitCoinExchangeRate = 0;
+  bitCoinAmount = 0;
 
   constructor(private readonly bitCoinExchangeService: BitCoinExchangeService) {
-    this.bitcoinExchange = bitCoinExchangeService.getPriceUSD()
+    bitCoinExchangeService.getExchangeRateInCurrency().subscribe(
+      ((response: BitcoinExchange) => {
+        this.bitCoinExchangeRate = Number(response.rates['BTC'])
+        this.bitCoinAmount = this.bitCoinExchangeRate
+        //console.log('response', response.rates['BTC'])
+      })
+    )
+  }
+
+  getExchangeRateInCurrency(event: any) {
+    const currencyAmount = event.target.value
+    this.currencyAmount = currencyAmount
+    this.bitCoinAmount = currencyAmount * this.bitCoinExchangeRate
   }
 }

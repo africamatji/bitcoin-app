@@ -1,13 +1,9 @@
-<p>Current Bitcoin in <strong>USD:</strong></p>
-<h2 *ngIf="bitcoinExchange | async as response">$1 = {{response.rates['BTC']}} BTC</h2>
+<p>Current Bitcoin in <strong>ZAR:</strong></p>
+<h2>R {{currencyAmount}} = {{ bitCoinAmount }} BTC</h2>
 <hr width="200px">
-<div class="card-container">
-  <p>Convert Bitcoin in <strong>ZAR:</strong></p>
-  <p>{{amountRef.value}}</p>
-</div>
 <div class="card-container">
   <mat-form-field class="example-full-width">
     <mat-label>Enter amount in Rands</mat-label>
-    <input type="number" matInput placeholder="R" value="" #amountRef>
+    <input type="number" matInput placeholder="R" value="" (keyup)="getExchangeRateInCurrency($event)">
   </mat-form-field>
 </div>
