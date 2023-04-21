@@ -5,13 +5,8 @@ import { BitCoinService } from './bitcoin.service';
 export class BitCoinController {
   constructor(private readonly bitcoinService: BitCoinService) {}
 
-  @Get('exchange')
-  getPriceUSD(): object {
-    return this.bitcoinService.getPriceUSD()
-  }
-
   @Get('exchange/:currency')
-  getPriceCurrency(@Param('currency') currency: string): object {
-    return this.bitcoinService.getPriceCurrency(currency)
+  getExchangeRateInCurrency(@Param('currency') currency: string): object {
+    return this.bitcoinService.getExchangeRateInCurrency(currency)
   }
 }
