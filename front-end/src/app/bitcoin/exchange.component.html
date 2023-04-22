@@ -1,0 +1,5 @@
+<div class="form-container">
+  <p>Current Bitcoin in <strong>ZAR:</strong></p>
+  <h2>ZAR {{currencyAmount}} = {{ bitCoinAmount }} BTC</h2>
+  <input type="number" placeholder="Enter ZAR amount" (keyup)="getExchangeRateInCurrency($event)" class="rounded-shadow"/>
+</div>

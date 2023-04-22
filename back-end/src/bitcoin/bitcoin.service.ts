@@ -7,12 +7,7 @@ import {map, catchError, Observable} from "rxjs";
 export class BitCoinService {
   constructor(private http: HttpService) {}
 
-  getPriceUSD() {
-      const url = 'https://api.coinbase.com/v2/exchange-rates'
-      return this.makeHttpRequest(url)
-  }
-
-  getPriceCurrency(currency: string): object {
+  getExchangeRateInCurrency(currency: string): object {
       const url = `https://api.coinbase.com/v2/exchange-rates?currency=${currency}`
       return this.makeHttpRequest(url)
   }
