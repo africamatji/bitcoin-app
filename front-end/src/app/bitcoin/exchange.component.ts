@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import {BitCoinExchangeService} from "./exchange.service";
 import {BitcoinExchange} from "./BitcoinExchange";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'bitcoin-exchange',
@@ -19,7 +18,6 @@ export class BitCoinExchangeComponent {
       ((response: BitcoinExchange) => {
         this.bitCoinExchangeRate = Number(response.rates['BTC'])
         this.bitCoinAmount = this.bitCoinExchangeRate
-        //console.log('response', response.rates['BTC'])
       })
     )
   }

@@ -10,7 +10,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
 import {BitCoinExchangeService} from "./bitcoin/exchange.service";
 import { HttpClientModule } from "@angular/common/http";
-
+import { MatGridListModule } from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { HttpClientModule } from "@angular/common/http";
     BrowserAnimationsModule,
     MatCardModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatGridListModule
   ],
   providers: [BitCoinExchangeService],
   bootstrap: [AppComponent]
