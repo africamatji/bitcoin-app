@@ -8,14 +8,27 @@
 
 ## Description
 
-Techinal assesement for YoMane
+Techinal assesement for YoMane by Africa Matji
 
 ### - Server Requirements
 ##### Node v18.13.0
 
-## Running the app (Manually)
 
-### (1) Back End
+## (Option 1) Running the app (Using Docker)
+
+###
+```bash
+$ docker-compose up # inside root directory of the project
+```
+This will orchestrate both the front-end and back-end containers.
+
+ - Angular application at [localhost:8888](http://localhost:8888).
+ - NestJs API at [localhost:3000](http://localhost:3000).
+
+
+## (Option 2) Running the app (Manually)
+
+### (a) Back End
 ```bash
 $ cd back-end/ # directory
 $ yarn install
@@ -23,7 +36,7 @@ $ yarn run start:prod
 ```
 This will run the NestJs API at [localhost:3000](http://localhost:3000/bitcoin/exchange/zar).
 
-### (2) Front End
+### (b) Front End
 ```bash
 $ cd front-end/ # directory
 $ yarn install
