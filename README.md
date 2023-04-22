@@ -15,7 +15,7 @@ Techinal assesement for YoMane
 
 ## Running the app (Manually)
 
-### Back End
+### (1) Back End
 ```bash
 $ cd back-end/ # directory
 $ yarn install
@@ -23,7 +23,7 @@ $ yarn run start:prod
 ```
 This will run the NestJs API at [localhost:3000](http://localhost:3000/bitcoin/exchange/zar).
 
-### Front End
+### (2) Front End
 ```bash
 $ cd front-end/ # directory
 $ yarn install
